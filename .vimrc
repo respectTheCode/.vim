@@ -18,6 +18,8 @@ autocmd BufWinLeave * call clearmatches()
 let b:jslint_disabled = 1
 map <F1> :JSLintToggle<enter>:JSLintUpdate<enter>:JSLintToggle<enter>
 
+map <F2> :%s/\s\+$//<enter>
+
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
