@@ -7,6 +7,17 @@ map <C-H> <C-W>h
 map <C-L> <C-W>l
 
 set number
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+let b:jslint_disabled = 1
+map <F1> :JSLintToggle<enter>:JSLintUpdate<enter>:JSLintToggle<enter>
+
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
