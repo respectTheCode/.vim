@@ -10,7 +10,7 @@ endif
 unlet! b:did_indent
 let b:did_indent = 1
 
-setlocal autoindent sw=2 et
+setlocal autoindent sw=1 noet
 setlocal indentexpr=GetStylusIndent()
 setlocal indentkeys=o,O,*<Return>,},],0),!^F
 setlocal formatoptions+=r
