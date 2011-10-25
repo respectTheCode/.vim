@@ -1,6 +1,11 @@
 set background=dark
 set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-H> <C-W>h
+map <C-L> <C-W>l
+
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
