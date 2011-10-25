@@ -153,7 +153,7 @@ function! s:JSLint()
   endif
   let b:jslint_output = system(s:cmd, lines . "\n")
   if v:shell_error
-    echoerr 'could not invoke JSLint!'
+    echoerr 'could not invoke JSLint! Add export JS_CMD=`which node` to .bash_profile and .bashrc'
     let b:jslint_disabled = 1
   end
 
