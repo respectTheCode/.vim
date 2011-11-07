@@ -15,10 +15,9 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-let b:jslint_disabled = 1
-map <F1> :JSLintToggle<enter>:JSLintUpdate<enter>:JSLintToggle<enter>
 
-map <F2> :%s/\s\+$//<enter>
+map <F1> :nohl<enter>
+map <F5> :%s/\s\+$//<enter>
 
 " An example for a vimrc file.
 "
