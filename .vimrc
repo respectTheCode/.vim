@@ -15,9 +15,12 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-
-map <F1> :nohl<enter>
+map <F1> :w<enter>
+map <F2> <C-W>h
+map <F3> <C-W>l
+map <F4> :nohl<enter>
 map <F5> :%s/\s\+$//<enter>
+map <F6> :redraw!<enter>
 
 " An example for a vimrc file.
 "
