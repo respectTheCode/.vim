@@ -7,6 +7,8 @@ let &t_SI = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 map <F1> :nohl<enter>
+vmap <F2> :s/^/\/\//<enter>:nohl<enter>
+vmap <F3> :s/^\/\///<enter>:nohl<enter>
 map <F5> :%s/\s\+$//<enter>
 map <F6> :redraw!<enter>
 
