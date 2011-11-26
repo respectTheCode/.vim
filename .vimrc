@@ -2,6 +2,8 @@ set backupcopy=yes
 set background=dark
 set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 
+setlocal spell spelllang=en_us
+
 "iTerm Cursor Fix
 let &t_SI = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
