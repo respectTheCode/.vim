@@ -8,4 +8,7 @@ set guioptions-=r
 set guioptions-=l
 set guioptions-=L
 
+set nobackup
+set nowritebackup
+
 color torte
