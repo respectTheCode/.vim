@@ -11,9 +11,9 @@ endif
 unlet! b:did_indent
 let b:did_indent = 1
 
-setlocal autoindent sw=1 noet
+setlocal autoindent sw=4 noet
 setlocal indentexpr=GetJadeIndent()
-setlocal indentkeys=o,O,*<Return>,},],0),!^F
+setlocal indentkeys=o,O,*<Return>,0),!^F
 
 " Only define the function once.
 if exists("*GetJadeIndent")
@@ -67,4 +67,3 @@ function! GetJadeIndent()
   endif
 endfunction
 
-" vim:set sw=2:
