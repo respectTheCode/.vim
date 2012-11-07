@@ -16,16 +16,6 @@ vmap <F3> :s/^\/\///<enter>:nohl<enter>
 map <F5> :%s/\s\+$//<enter>
 map <F6> :redraw!<enter>
 
-map <D-J> <C-W>j
-map <D-K> <C-W>k
-map <D-H> <C-W>h
-map <D-L> <C-W>l
-
-map <D-S-J> <C-W>J
-map <D-S-K> <C-W>K
-map <D-S-H> <C-W>H
-map <D-S-L> <C-W>L
-
 imap <D-s> <esc>:w<enter>
 nmap <D-s> :w<enter>
 map <D-w> :q<enter>
