@@ -29,6 +29,9 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+autocmd BufNewFile,BufReadPost *.jake set filetype=javascript
+autocmd BufNewFile,BufReadPost Jakefile set filetype=javascript
+
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
