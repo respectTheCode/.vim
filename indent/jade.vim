@@ -13,7 +13,7 @@ let b:did_indent = 1
 
 setlocal autoindent sw=4 noet
 setlocal indentexpr=GetJadeIndent()
-setlocal indentkeys=o,O,*<Return>,0),!^F
+setlocal indentkeys=o,O,*<Return>,},],0),!^F
 
 " Only define the function once.
 if exists("*GetJadeIndent")
@@ -24,7 +24,7 @@ let s:attributes = '\%((.\{-\})\)'
 let s:tag = '\([%.#][[:alnum:]_-]\+\|'.s:attributes.'\)*[<>]*'
 
 if !exists('g:jade_self_closing_tags')
-  let g:jade_self_closing_tags = 'meta|link|img|hr|br'
+  let g:jade_self_closing_tags = 'meta|link|img|hr|br|input'
 endif
 
 setlocal formatoptions+=r
@@ -51,8 +51,8 @@ function! GetJadeIndent()
   if line =~ '^!!!'
     return indent
   elseif line =~ '^/\%(\[[^]]*\]\)\=$'
-    return increase
-  elseif group == 'jadeFilter'
+    return increse
+  elseif line =~ '^\%(if\|else\|unless\|for\|each\|block\|mixin\|append\)'
     return increase
   elseif line =~ '^'.s:tag.'[&!]\=[=~-].*,\s*$'
     return increase
@@ -60,10 +60,11 @@ function! GetJadeIndent()
     return increase
   elseif line =~? '^\v%('.g:jade_self_closing_tags.')>'
     return indent
-  elseif group =~? '\v^%(jadeTag|jadeAttributesDelimiter|jadeClass|jadeId|htmlTagName|htmlSpecialTagName)$'
+  elseif group =~? '\v^%(jadeAttributesDelimiter|jadeClass|jadeId|htmlTagName|htmlSpecialTagName|jadeFilter)$'
     return increase
   else
     return indent
   endif
 endfunction
 
+" vim:set sw=2:
