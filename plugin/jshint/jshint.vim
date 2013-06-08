@@ -50,6 +50,9 @@ if !exists("s:jshint_command")
     elseif executable('js')
         let s:js_interpreter = 'js'
         let s:sep = ' '
+    elseif executable('node')
+        let s:js_interpreter = 'node'
+        let s:sep = ' '
     endif
     let s:jshint_command = s:js_interpreter . ' "' .  s:jshint . '" "' . s:jshint_parser . '"' . s:sep
 endif
