@@ -14,11 +14,8 @@ map <F1> :nohl<enter>
 vmap <F2> :s/^/\/\//<enter>:nohl<enter>
 vmap <F3> :s/^\/\///<enter>:nohl<enter>
 map <F5> :%s/\s\+$//<enter>
-map <F6> :redraw!<enter>
-
-imap <D-s> <esc>:w<enter>
-nmap <D-s> :w<enter>
-map <D-w> :q<enter>
+map <F6> :tabp<enter>
+map <F7> :tabn<enter>
 
 set number
 
