@@ -21,7 +21,20 @@ map <F5> :%s/\s\+$//<enter>:%retab!<enter>
 map <F6> :tabp<enter>
 map <F7> :tabn<enter>
 
-set number
+set relativenumber
+function! NumberToggle()
+	if(&relativenumber == 1)
+		set number
+	else
+		set relativenumber
+	endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<enter>
+autocmd FocusLost * :set number
+autocmd FocusGained * :set relativenumber
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
