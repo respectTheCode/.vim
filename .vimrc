@@ -5,6 +5,7 @@ set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 setlocal spell spelllang=en_us
 set nobackup
 set nowritebackup
+set clipboard+=unnamed
 
 "iTerm Cursor Fix
 let &t_SI = "\<Esc>]50;CursorShape=2\x7"
